@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minpin"
+version = "1.0.0"
+description = "Automatically add minimum version pins to unpinned packages in conda YAML files."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Demetris Roumis", email = "8qdo8efl3@mozmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Build Tools",
+]
+keywords = ["conda", "pinning", "anaconda-project", "dependencies"]
+
+dependencies = []
+
+[project.scripts]
+minpin = "minpin.minpin:main"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--strict-markers --tb=short"
+testpaths = ["tests"]
