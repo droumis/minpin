@@ -6,14 +6,14 @@
 /_____/   U   
 ```
 
-# Min Pin
+# MinPin
 
-Min Pin is a command-line tool that automatically adds minimum version pins to unpinned packages in conda-friendly YAML files, such as `environment.yml` or `anaconda-project.yml`.
+MinPin is a command-line tool that automatically adds minimum version pins from the `conda list` and `pip list` output to the unpinned packages in conda YAML files, such as `environment.yml` or `anaconda-project.yml`.
 
 ## Features
 
-- Parses `conda list` and `pip list` to retrieve installed package versions.
-- Updates YAML files by adding minimum version pins to unpinned packages.
+- Parses `conda list` and `pip list` outputs to retrieve installed package versions.
+- Updates YAML files by adding minimum version pins to unpinned packages (and skips already pinned packed).
 - Handles both conda and pip dependencies.
 - Preserves the original structure and comments of the YAML file.
 
@@ -24,18 +24,13 @@ pip install minpin
 ```
 
 ## Usage
+Activate your environment and then run:
 
 ```bash
-minpin ./environment.yml
+minpin <path/to/environment.yml or anaconda-project.yml>
 ```
 
-Optionally, specify a conda list output file which you can create with `conda list > conda_list.txt`:
-
-```bash
-minpin anaconda-project.yml --conda-list conda_list.txt
-```
-
-## Example
+## Example Input/Output
 
 **Input: original `environment.yml`**
 
@@ -51,8 +46,6 @@ dependencies:
       - requests
       - flask
 ```
-
-
 
 **Output: Updated `environment.yml`**
 ```yaml
