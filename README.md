@@ -38,8 +38,8 @@ minpin <path/to/environment.yml or anaconda-project.yml>
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
-  - numpy
+  - python=3.10 # blah blah
+  - numpy # blah
   - pandas>=1.3
   - pip
   - pip:
@@ -52,9 +52,9 @@ dependencies:
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
-  - numpy>=1.24.0 # auto min pinned 2024-11-18
-  - pandas>=1.3.3 # auto min pinned 2024-11-18
+  - python=3.10 # blah blah
+  - numpy>=1.24.0 # auto min pinned 2024-11-18 # blah
+  - pandas>=1.3
   - pip
   - pip:
       - requests>=2.28.2 # auto min pinned 2024-11-18
