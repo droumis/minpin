@@ -20,7 +20,7 @@ Min Pin is a command-line tool that automatically adds minimum version pins to u
 ## Installation
 
 ```bash
-pip install conda-min-pin
+pip install minpin
 ```
 
 ## Usage
